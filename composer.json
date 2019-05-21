@@ -1,6 +1,6 @@
 {
     "name": "ptdot/errormessage",
-    "description": "Simple error message display from exception",
+    "description": "Laravel simple error message display from exception",
     "type": "library",
     "require": {
         "php": ">=7.0"

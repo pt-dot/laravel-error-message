@@ -22,7 +22,7 @@ Next, if using Laravel under 5.5, include the service provider and Facade within
 ],
 
 'aliases' => [
-    'ErrorMessage' => Ptdot\LdapAuth\ErrorMessage::class,
+    'ErrorMessage' => Ptdot\ErrorMessage\ErrorMessage::class,
 ]
 ```
 
@@ -35,12 +35,32 @@ Publish assets using command:
 ```bash
 php artisan vendor:publish
 ```
+Set your default error message in `config/errormessage.php`.
+## Basic Usage
 
-## Usage
+You may use this package to handle exception display through your REST API or flash message.
+```php
+<?php
 
-+ Using Facade
+// default usage using facade
+try {
+    throw new \Exception('This is exception message');
+} catch (\Exception $exception) {
+    return response()->json([
+        'errors' => ErrorMessage::displayExceptionMessage($exception)
+    ], 500);
+}
 
-+ Using Dependency Injection
+// you may need traceAsString option enabled using this way:
+return response()->json([
+        'errors' => ErrorMessage::traceAsString()->displayExceptionMessage($exception)
+    ], 500);
+
+// Need to override exception message? Don't worry
+return response()->json([
+        'errors' => ErrorMessage::displayExceptionMessage($exception, 'exception message will be overrided with this')
+    ], 500);
+```
 
 ## Contributing
 
