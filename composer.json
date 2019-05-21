@@ -1,14 +1,22 @@
 {
     "name": "ptdot/errormessage",
     "description": "Laravel simple error message display from exception",
+    "keywords": [
+        "dot",
+        "laravel-error-message",
+        "message-exception"
+    ],
     "type": "library",
+    "homepage": "https://github.com/pt-dot/laravel-error-message",
     "require": {
         "php": ">=7.0"
     },
+    "license": "MIT",
     "authors": [
         {
             "name": "Didik Tri Susanto",
-            "email": "didiktrisusanto@gmail.com"
+            "email": "didiktrisusanto@gmail.com",
+            "homepage": "https://medium.com/teknomuslim"
         }
     ],
     "autoload": {
