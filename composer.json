@@ -1,0 +1,28 @@
+{
+    "name": "ptdot/errormessage",
+    "description": "Simple error message display from exception",
+    "type": "library",
+    "require": {
+        "php": ">=7.0"
+    },
+    "authors": [
+        {
+            "name": "Didik Tri Susanto",
+            "email": "didiktrisusanto@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ptdot\\ErrorMessage\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ptdot\\ErrorMessage\\ErrorMessageServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
