@@ -30,12 +30,14 @@ Since Laravel 5.5+ is using Package Discovery, there is no need manually insert 
 
 ## Configuration
 
-Publish assets using command:
+Publish config using command:
 
 ```bash
 php artisan vendor:publish
 ```
+
 Set your default error message in `config/errormessage.php`.
+
 ## Basic Usage
 
 You may use this package to handle exception display through your REST API or flash message.
@@ -50,12 +52,20 @@ try {
         'errors' => ErrorMessage::displayExceptionMessage($exception)
     ], 500);
 }
+```
 
+If you want to debug and need display `traceAsString` option, you may call `traceAsString()` method:
+
+```php
 // you may need traceAsString option enabled using this way:
 return response()->json([
         'errors' => ErrorMessage::traceAsString()->displayExceptionMessage($exception)
     ], 500);
+```
 
+Want to override default message? Don't worry this package is able to do that.
+
+```php
 // Need to override exception message? Don't worry
 return response()->json([
         'errors' => ErrorMessage::displayExceptionMessage($exception, 'exception message will be overrided with this')
